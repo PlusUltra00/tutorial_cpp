@@ -1,5 +1,5 @@
 # tutorial_cpp
-tutorial lessons for C++ beginner.
+tutorial for C++ beginner.
 
 ## Hello
 初学者が必ずと言っていいほど書く`Hello, world`のプログラムです．記述を1つ1つ説明すると膨大な時間がかかるため，説明は省略します．今はこのような記述でこう動くと思ってもらえればOKです．
