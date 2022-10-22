@@ -83,7 +83,7 @@ int main() {
 	auto FLOAT = 3.0f;
 	auto DOUBLE = 3.0;
 #if __cplusplus > 202002L // C++のバージョンを判定するマクロ
-		auto SIZE = 3zu;  // C++ 23 or later. size_t型に対するリテラル
+	auto SIZE = 3zu;  // C++ 23 or later. size_t型に対するリテラル
 #endif
 
 	// 四則演算の結果を示す．基本的にバイト数の違う整数どうしは大きい方の型となり，（int + long long → long long）
