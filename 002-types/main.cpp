@@ -60,8 +60,14 @@ int main() {
 	size_t size_float         = sizeof(float);
 	size_t size_double        = sizeof(double);
 
+	// intptr_t などのポインタ(のちに解説)ではプラットフォームによってサイズが変化する．
+#ifdef _WIN64 // 64bit であることを判定するマクロ
 	size_t size_intptr        = sizeof(intptr_t);
 	size_t size_uintptr       = sizeof(uintptr_t);
+#else  // 32bit
+	size_t size_intptr        = sizeof(intptr_t);
+	size_t size_uintptr       = sizeof(uintptr_t);
+#endif
 
 	// 接尾辞として ul → unsigned long, ll → long long など型の情報を加えることができる表現が存在し，
 	// これらをリテラルと呼ぶ．通常，整数をそのまま入力すれば int 型として解釈されるが，リテラルにより auto 型を用いた初期化が可能となる．
@@ -76,7 +82,7 @@ int main() {
 
 	auto FLOAT = 3.0f;
 	auto DOUBLE = 3.0;
-#if __cplusplus > 202002L
+#if __cplusplus > 202002L // C++のバージョンを判定するマクロ
 		auto SIZE = 3zu;  // C++ 23 or later. size_t型に対するリテラル
 #endif
 
@@ -85,12 +91,12 @@ int main() {
 	auto sum = 3   + 3.0;
 	auto sub = 3   - 3ul;
 	auto mul = 3.0 * 3.0f;
-	auto div = 3.0 / 3ll;
+	auto div = 3   / 3ll;
 
 	// using と typedef は型に別名を付与することができる．using はC++のみの機能．typedef はC言語・C++どちらにも備わっている．
 	// 違いとしては using であれば typedef よりもより自由な表現が可能となった（テンプレートなど，後述）．
 	// 上に示している size_t は unsigned long long を typedef したものである．このほかにもライブラリによっては独自の typedef が定義してあるものもある．
-#if __cplusplus
+#if __cplusplus // C++ であることを判定するマクロ
 	using UINT  = unsigned int;
 #else
 	typedef unsigned int  UINT;
