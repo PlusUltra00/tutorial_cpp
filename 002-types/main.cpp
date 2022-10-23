@@ -2,8 +2,10 @@
 
 int main() {
 	// C++ では 型名 変数名 = 値 で変数を定義している．
-	// int  i = 1;  型名..int, 変数名.. i, 値..1
-	// long l = 2;  型名..int, 変数名.. l, 値..2
+	// 型名 変数名     ; のみの場合は宣言　(declaration)
+	// 型名 変数名 = 値;     の場合は初期化(initialization)
+	// int  i = 1;  型名..int, 変数名..i, 値..1
+	// long l = 2;  型名..int, 変数名..l, 値..2
 	// 各数値型のバイト数を変数にまとめた．F11でデバッグしながらそれぞれのバイト数を確認するとよい．
 	size_t size_int           = sizeof(int);
 	size_t size_long          = sizeof(long);
