@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿#include <iostream>  // 標準入出力
 
 int main() {
 	// output(出力)
@@ -6,7 +6,7 @@ int main() {
 
 	// input(入力)
 	int i;           // 変数を宣言
-	std::cin >> i;   // cinを用いて出力
+	std::cin >> i;   // cinを用いて入力
 
 	// 一度に複数の出力を与えることも可能．
 	std::cout << "入力されたのは" << i << "です。" << std::endl;

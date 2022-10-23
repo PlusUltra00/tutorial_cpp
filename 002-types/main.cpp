@@ -1,4 +1,4 @@
-﻿#include <cstdint>
+﻿#include <cstdint> // 数値型に関する typedef をしている．int8_tなど
 
 int main() {
 	// C++ では 型名 変数名 = 値 で変数を定義している．
@@ -99,8 +99,8 @@ int main() {
 	// 違いとしては using であれば typedef よりもより自由な表現が可能となった（テンプレートなど，後述）．
 	// 上に示している size_t は unsigned long long を typedef したものである．このほかにもライブラリによっては独自の typedef が定義してあるものもある．
 #if __cplusplus // C++ であることを判定するマクロ
-	using UINT  = unsigned int;
+	using uint  = unsigned int;
 #else
-	typedef unsigned int  UINT;
+	typedef unsigned int  uint;
 #endif
 }
